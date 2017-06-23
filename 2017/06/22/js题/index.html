@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果：undefined5local例子2var kkk=”global”,c=5; function t(){">
+<meta name="description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果： undefined 5 local例子2var kkk=”global”,c=5; function t(">
 <meta name="keywords" content="javascript,jquery,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几道经典JavaScript面试题">
 <meta property="og:url" content="http://yoursite.com/2017/06/22/js题/index.html">
 <meta property="og:site_name" content="小确幸">
-<meta property="og:description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果：undefined5local例子2var kkk=”global”,c=5; function t(){">
-<meta property="og:updated_time" content="2017-06-23T09:28:06.880Z">
+<meta property="og:description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果： undefined 5 local例子2var kkk=”global”,c=5; function t(">
+<meta property="og:updated_time" content="2017-06-23T11:57:58.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="几道经典JavaScript面试题">
-<meta name="twitter:description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果：undefined5local例子2var kkk=”global”,c=5; function t(){">
+<meta name="twitter:description" content="javascript例子1var scope=”global”,c=5; function t(){   console.log(scope);   console.log(c);     var scope=”local”     console.log(scope);}t();  结果： undefined 5 local例子2var kkk=”global”,c=5; function t(">
 
 
 
@@ -220,16 +220,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -246,6 +236,26 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -376,11 +386,14 @@
 
       
         <p>javascript<br>例子1<br>var scope=”global”,c=5;<br> function t(){<br>   console.log(scope);<br>   console.log(c);<br>     var scope=”local”<br>     console.log(scope);<br>}<br>t(); </p>
-<p>结果：<br>undefined<br>5<br>local<br>例子2<br>var kkk=”global”,c=5;<br> function t(){<br>   console.log(kkk);<br>   console.log(c);<br>     var scope=”local”<br>     console.log(scope);<br>}<br>t(); </p>
+<pre><code>结果：
+undefined
+5
+</code></pre><p>local<br>例子2<br>var kkk=”global”,c=5;<br> function t(){<br>   console.log(kkk);<br>   console.log(c);<br>     var scope=”local”<br>     console.log(scope);<br>}<br>t(); </p>
 <p>结果：<br>global<br>5<br>local</p>
 <h1 id="问题1：将例子1的scope改为例子2的kkk后，结果就不一样。作用域是一样的，scope不是关键字也不是保留字，为何会这样？"><a href="#问题1：将例子1的scope改为例子2的kkk后，结果就不一样。作用域是一样的，scope不是关键字也不是保留字，为何会这样？" class="headerlink" title="问题1：将例子1的scope改为例子2的kkk后，结果就不一样。作用域是一样的，scope不是关键字也不是保留字，为何会这样？"></a>问题1：将例子1的scope改为例子2的kkk后，结果就不一样。作用域是一样的，scope不是关键字也不是保留字，为何会这样？</h1><p>例子3：<br>var b = 44;<br>alert(delete b);            //false<br>alert(b);                   //44        </p>
-<p>var name = “ddd”;<br>alert(delete name);         //true<br>alert(name);                //出错<br>问题2：例子3中将name,改成其他变量名，就会正常了。<br>上面3个例子均是在firefox46.0.1得到的结果<br>IE11：例子1和2 没反应，例子3 alert(delete name)都是false。其他IE版本号没试过<br>如果将例子12的scope 改成name 将例子3中的name 改成scope 则结果就正常了<br>有哪位大牛能解释这神奇的现象吗？（查过scope name 都不是ECMA组织定义的关键字或是保留字)<br>谢谢！<br>周1978 发布于 56 分钟前<br>0 3</p>
-<p>xialeistudio  51 分钟前<br>楼主麻烦把代码排下版，用代码区块包起来。我现在看起来头晕<br>1 评论<br>Colin_Chen  38 分钟前<br>解答一<br>JS在解析一段代码的时候，会先使用var给声明某个变量，然后才执行代码。在例子一当中，你在函数t声明了scope变量，这时scope变量的作用域在函数范围内。所以你在第一次打印scope时值为undefined，直到赋值为”local”后，scope才有值。<br>MDN var描述<br>变量声明无论出现在代码的任何位置，都会在任何代码执行之前处理。使用var语句声明的变量的作用域是当前执行位置的上下文：一个函数的内部（声明在函数内）或者全局（声明在函数外）。<br>解答二<br>使用var声明的变量，默认的configurable属性是false，所以你是无法删除的，而name是window的一个属性，configurable是true。<br>MDN delete描述<br>delete 操作符用来删除一个对象的属性。<br>在严格模式中，如果属性是一个不可配置（non-configurable）属性，删除时会抛出异常，非严格模式下返回 false。其他情况都返回 true。<br>1 7<br>luzemin  26 分钟前<br>一图解答：</p>
+<p>var name = “ddd”;<br>alert(delete name);         //true<br>alert(name);                //出错<br>问题2：例子3中将name,改成其他变量名，就会正常了。<br>上面3个例子均是在firefox46.0.1得到的结果</p>
+<p>解答一<br>JS在解析一段代码的时候，会先使用var给声明某个变量，然后才执行代码。在例子一当中，你在函数t声明了scope变量，这时scope变量的作用域在函数范围内。所以你在第一次打印scope时值为undefined，直到赋值为”local”后，scope才有值。<br>MDN var描述<br>变量声明无论出现在代码的任何位置，都会在任何代码执行之前处理。使用var语句声明的变量的作用域是当前执行位置的上下文：一个函数的内部（声明在函数内）或者全局（声明在函数外）。<br>解答二<br>使用var声明的变量，默认的configurable属性是false，所以你是无法删除的，而name是window的一个属性，configurable是true。<br>MDN delete描述<br>delete 操作符用来删除一个对象的属性。<br>在严格模式中，如果属性是一个不可配置（non-configurable）属性，删除时会抛出异常，非严格模式下返回 false。其他情况都返回 true。<br>1 7<br>一图解答：</p>
 <p>1 2<br>scort  17 分钟前<br>var scope=”global”,c=5;<br> function t(){<br>   console.log(scope);<br>   console.log(c);<br>   var scope=”local”<br>   console.log(scope);<br>}<br>t();<br>相当于<br>var scope=”global”,c=5;<br> function t(){<br>   var scope;//前置，值默认undefined<br>   console.log(scope);<br>   console.log(c);<br>   scope=”local”<br>   console.log(scope);<br>}<br>t();<br>问题2类似，只是kkk访问的是父作用域的kkk，值当然是global<br>var b = 44;<br>alert(delete b);            //false<br>alert(b);                   //44        </p>
 <p>var name = “ddd”;<br>alert(delete name);         //true<br>alert(name);                //出错<br>相当于<br>var b,name;//name将被忽略，因为window本身有name属性，而且configurable为true<br>b = 44;<br>alert(delete b);            //false<br>alert(b);                   //44        </p>
 <p>name = “ddd”;<br>alert(delete name);         //true<br>alert(name);                //出错<br>在全局作用域下使用var声明变量，相当于给window对象加属性，并且加的属性的configurable为false，意思就是不能被删除。</p>
@@ -390,7 +403,6 @@
 console.log(scope); // outPut - &gt; local;
 </code></pre><p>}</p>
 <p>使用var时，会触发提升机制（将声明提升到当前作用域顶部）。<br>0 2</p>
-<p>答案不满意？邀请你心中的大神来回答吧<br>邀请回答我来回答<br>相似问题<br>javascript是面向对象的，怎么体现javascript的继承关系？9个回答<br>javascript是面向对象的，怎么体现javascript的继承关系？9个回答  已解决<br>JavaScript 有能看 jQuery 原生的 JavaScript 代码的地方吗?3个回答  已解决</p>
 
       
     </div>
@@ -433,6 +445,22 @@ console.log(scope); // outPut - &gt; local;
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/23/404/" rel="prev" title="404">
+                404 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -508,7 +536,7 @@ console.log(scope); // outPut - &gt; local;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
