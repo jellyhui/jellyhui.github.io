@@ -95,19 +95,17 @@
 
 
 
-<meta name="description" content="使用hexo搭建github pages前言：     以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。">
+<meta name="description" content="一、静态资源映射表    记录文件依赖、打包、url等信息的表结构，fis2中称之为map.json，但在fis3中默认不产出，对其做了优化。当某个文件包含字符RESOURCE_MAP时，就会用表结构数据替换此字符，就不再固定把表结构写入某一个特定文件，方便定制。 二、模块化开发">
 <meta name="keywords" content="javascript,jquery,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用hexo搭建个人博客github pages">
-<meta property="og:url" content="http://yoursite.com/2017/06/26/使用hexo搭建github pages/index.html">
+<meta property="og:title" content="fis3学习笔记整理">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/fis3高级学习笔记/index.html">
 <meta property="og:site_name" content="小确幸">
-<meta property="og:description" content="使用hexo搭建github pages前言：     以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。">
-<meta property="og:image" content="http://yoursite.com/2017/06/26/使用hexo搭建github%20pages/images/version.png">
-<meta property="og:updated_time" content="2017-06-26T10:12:43.008Z">
+<meta property="og:description" content="一、静态资源映射表    记录文件依赖、打包、url等信息的表结构，fis2中称之为map.json，但在fis3中默认不产出，对其做了优化。当某个文件包含字符RESOURCE_MAP时，就会用表结构数据替换此字符，就不再固定把表结构写入某一个特定文件，方便定制。 二、模块化开发">
+<meta property="og:updated_time" content="2017-06-26T10:30:25.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用hexo搭建个人博客github pages">
-<meta name="twitter:description" content="使用hexo搭建github pages前言：     以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。">
-<meta name="twitter:image" content="http://yoursite.com/2017/06/26/使用hexo搭建github%20pages/images/version.png">
+<meta name="twitter:title" content="fis3学习笔记整理">
+<meta name="twitter:description" content="一、静态资源映射表    记录文件依赖、打包、url等信息的表结构，fis2中称之为map.json，但在fis3中默认不产出，对其做了优化。当某个文件包含字符RESOURCE_MAP时，就会用表结构数据替换此字符，就不再固定把表结构写入某一个特定文件，方便定制。 二、模块化开发">
 
 
 
@@ -135,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/26/使用hexo搭建github pages/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/26/fis3高级学习笔记/"/>
 
 
 
 
 
-  <title>使用hexo搭建个人博客github pages | 小确幸</title>
+  <title>fis3学习笔记整理 | 小确幸</title>
   
 
 
@@ -280,7 +278,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/使用hexo搭建github pages/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/26/fis3高级学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huiTine">
@@ -297,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用hexo搭建个人博客github pages</h1>
+          <h1 class="post-title" itemprop="name headline">fis3学习笔记整理</h1>
         
 
         <div class="post-meta">
@@ -309,7 +307,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:31:03+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T18:20:29+08:00">
                 2017-06-26
               </time>
             
@@ -350,9 +348,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/26/使用hexo搭建github pages/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/26/fis3高级学习笔记/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/26/使用hexo搭建github pages/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/26/fis3高级学习笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,50 +375,43 @@
       
 
       
-        <h1 id="使用hexo搭建github-pages"><a href="#使用hexo搭建github-pages" class="headerlink" title="使用hexo搭建github pages"></a>使用hexo搭建github pages</h1><p>前言：<br>     以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。<br><a id="more"></a><br>一.   <strong>首先，你得有一个github的账号</strong>，这个注册过程就不详细描述了，有账号即可。<br>二.   <strong>本地安装环境（以windows为例）</strong>： </p>
-<pre><code>1.  git安装： 去官网下载git工具，基本上一路next，也可根据自己需要是否安装其他以及快捷方式等等选择； 
-2.  node环境： 去node官网&lt;https://nodejs.org/en/&gt; 下载node，安装node环境。
-    ![node官网目前显示版本](../images/node.png) 最好使用稳定版本6.x，最新的不一定稳定哈，注意检查环境变量，若无，在环境变量的path的值中加入node的安装目录。
-3.  npm、cnpm： 现在的node包下载之后，已经集成了npm，所以无需再做别的操作，因npm链接国外不稳定，可以设置淘宝镜像cnpm： `$ npm install -g cnpm --registry=https://registry.npm.taobao.org ` 
-----详细信息可自行查询链接 &lt;https://npm.taobao.org/&gt;。
-4.  使用npm install -g hexo全局安装hexo。
-</code></pre><p> 目前我个人安装环境版本如图：  <img src="./images/version.png" alt="Alt text"><br>三. <strong>注意github使用过程中，别忘记生成ssh</strong>！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;jellyhui&quot;</div><div class="line">$ git config --global user.email xx@example.com</div><div class="line">$ssh-keygen -t rsa -C &apos;xxx@example.com&apos;</div></pre></td></tr></table></figure>
-<p>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的 ~/.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。然后去个人信息的settings中找到 SSH and GPG keys， title主要是为了方便自己识别是哪台PC，在SSH一栏，复制id_rsa.pub内的内容即可。<br>四.  <strong>当环境均安装就绪后，就可以尽情使用hexo啦</strong>！<br>    主要过程分为三步：<br>        1&gt; .  创建repository； new repository -不详细说，注意repository的名字必须与用户名一样即可。<br>        2&gt;.  使用hexo生成pages</p>
-<pre><code>    1. hexo init  &lt;文件夹名&gt; : hexo生成文件夹并初始化；
-    2. cd &lt;文件夹&gt; 并且  npm install： 安装所需环境配置；新建完成后，文件夹下的目录如下：
-            .
-            ├── _config.yml---网站的配置文件，可以在其中配置网站的大部分参数
-            ├── package.json ---应用程序的信息
-            ├── scaffolds ---资源文件夹，是用来存放用户资源的地方
-            ├── source ---资源文件夹，是用来存放用户资源的地方
-            |   ├── _drafts
-            |   └── _posts
-            └── themes ---主题文件夹，Hexo会根据主题来生成不同的静态页面
+        <p>一、静态资源映射表<br>    记录文件依赖、打包、url等信息的表结构，fis2中称之为map.json，但在fis3中默认不产出，对其做了优化。当某个文件包含字符<strong>RESOURCE_MAP</strong>时，就会用表结构数据替换此字符，就不再固定把表结构写入某一个特定文件，方便定制。</p>
+<p>二、模块化开发</p>
+<a id="more"></a>
+<pre><code>1.     AMD/CMD,以及require.js、sea.js等前端模块化框架，主要给js提供模块化开发的支持，之后也增加了对css、前端模板的支持。这些框架就包含了组件依赖分析、保持加载并保持依赖顺序等功能。
 
-    3. 生成之后，主要配置_config.yml文件，常见配置等说明后续再进一步说明。目前最需要的是 
-     `deploy:
-      type: git 
-      repo: ssh://git@github.com/yourname/yourname.github.io.git
-      branch: master`
-    4.   在source文件夹下，有_posts文件夹，存放用户自己的md文件，也就是需要上传的文件，需要注意的是，自己的文件中需要用
+2.    fis中依赖本身在构建过程中就已经分析完成，并记录在静态资源列表中，那么对于线上运行时，模块化框架就可以省掉依赖分析这个步骤了。同事，js还需要有运行时支持，所以对于不同的前端模块化框架，在js代码中编译分析依赖增加了几种依赖函数的解析：define()   / require(&apos;&apos;)  / require.aysnc(&apos;&apos;)   /require.aysnc([ ]).
+3.    考虑到不可能一个框架运用多个模块化框架（因为全都占用相同的全局函数，互斥），所以编译支持这块分成三个插件进行支持： 
+    * fis-hook-commonjs
+    * fis-hook-amd
+    * fis-hook-cmd
+    *     在fis-config.js中： fis.hook(&apos;commonjs&apos;)； 
 
-```
-        ---
-            title: md文件的名字
-            date: 书写时间
-            tags: [mysql,php,redis]---标签的名字s
-            categories: [mysql] ---分类的名字
-        ---
+4.  但这个插件也只是对编译工具的扩展，支持前端模块化框架中的组件与组件之间依赖的函数，以及入口函数来标记生成到静态资源映射表中，另外一个功能时针对某些前端模块化框架的特性自动添加define。但如何把资源加载到页面上，需要额外的fis构建插件或方案支持。
+5. 如纯前端项目，依赖插件fis-postpackager-loader，这是一种基于构建工具的加载组件的方法，构建出的html已经包含了其使用到的组件以及依赖资源的引用：npm install -g fis3-postpackager-loader在配置中添加fis.match（‘::packager’, { postpackager: fis.plugin(&apos;loader&apos; , { }) }）.
+6. 为了方便、统一管理组件以及合并时便利，需要把组件统一放到某些文件夹下，并设置此目录下的资源都是组件资源。 fis.match(&apos;/widget/**.js&apos; , { isMod : true}); 
+7. 工具扩展、目录规范，前后端的前段工程项目都需要，其不同之处就在于静态资源管理这部分。
 
-```来表明这篇文章应该所属的分类以及标签。
-5.  &gt;  hexo g ---生成静态页面，生成的内容在public文件夹下
-    &gt;  hexo s ---启动本地服务localhos://127.0.0.1:4000，进行文章预览调试；
-    &gt;  hexo s --debug 命令可以用来调试
-</code></pre><p>3&gt;.   推送代码： </p>
-<pre><code>1. hexo deploy ：推送对象是在_config.yml中配置的repo对象（一般是SSH对象）；
-2. 推送时若提示git not found之类的错误，注意检查是否安装插件： $`npm install hexo-deployer-git --save`；
-3. 打开 yourname.github.io就可以看到在效果啦~~
+    1. 编译工具扩展--根据笔筒前端模块化框架，扩展声明依赖能力
+    2. 静态资源管理--解析静态资源映射表加载页面用到的组件以及组件的依赖
+    3. 目录规范： 设置某个文件夹下资源标记为依赖
+</code></pre><p>三、资源映射表的模块化设计方案<br>四、解决方案封装</p>
+<pre><code>1.      解决一系列特定问题的工具、规范、开发、上线支持的方案，被称之为解决方案。前端一般包括： 研发规范+模块化框架+测试套件+辅助开发工具。fis3就是把这些集成到一个工具中，一个解决方案就是继承自fis3并且支持特定模块化开发、特定模板语言、研发规范的构建工具。
+2. 必要性：规范开发方便开发树立品牌
+3. 解决方案封装： 
+
+    * &gt;准备方案名、构建工具名字、模板语言、模块化框架选择、特定目录规范
+    * &gt;目录规范： static--静态资源、page--页面、widget--组件，fis-config.js--配置文件
+    * &gt;部署规范：template--所有的php模板，static--所有的静态资源
+    * &gt;开发
+</code></pre><p>五、基于smarty的解决方案</p>
+<pre><code>1.    fis3-smarty集成了fis-plus的目录规范以及处理插件，实现对smarty模板方案的工程构建工具支持。  
+2.    smarty本身就是php，同时提供了若干插件，当真正和后端分离是不需要有后盾支持就能用插件的方式解决静态资源管理这件事。
+3.    原理： 模板依赖某个组件（js。css。模板）不再直接引入，而是添加依赖，这些依赖在fis本地编译的时候会产出依赖树，我们一直都叫它静态资源映射表。
+4.   fis本身是依赖某种js组件化加载规范，
+</code></pre><p>六、基于PHP的解决方案</p>
+<pre><code>1.     解决问题：安装php-cgi和java，把项目发布到apache等本地安装好的服务器目录下预览调试。支持模块化开发、组件开发、自动分析资源依赖关系、自动把js/css放在底部输出，提升页面渲染能力，收集组件中的内嵌样式或脚本。
+2.     如何做：fis静态资源管理的核心是map表，
 </code></pre>
       
     </div>
@@ -467,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/22/js题/" rel="next" title="几道经典JavaScript面试题">
-                <i class="fa fa-chevron-left"></i> 几道经典JavaScript面试题
+              <a href="/2017/06/26/node-glob学习笔记/" rel="next" title="node-glob学习笔记">
+                <i class="fa fa-chevron-left"></i> node-glob学习笔记
               </a>
             
           </div>
@@ -477,8 +468,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/26/node-glob学习笔记/" rel="prev" title="node-glob学习笔记">
-                node-glob学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/26/npm详解/" rel="prev" title="npm详细使用">
+                npm详细使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,17 +524,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat1.jpg"
@@ -612,22 +594,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用hexo搭建github-pages"><span class="nav-number">1.</span> <span class="nav-text">使用hexo搭建github pages</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -772,9 +738,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/06/26/使用hexo搭建github pages/';
-          this.page.identifier = '2017/06/26/使用hexo搭建github pages/';
-          this.page.title = '使用hexo搭建个人博客github pages';
+          this.page.url = 'http://yoursite.com/2017/06/26/fis3高级学习笔记/';
+          this.page.identifier = '2017/06/26/fis3高级学习笔记/';
+          this.page.title = 'fis3学习笔记整理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
