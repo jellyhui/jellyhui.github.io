@@ -377,7 +377,7 @@
         
           <h2 id="widget组件学习笔记"><a href="#widget组件学习笔记" class="headerlink" title="widget组件学习笔记"></a>widget组件学习笔记</h2><p>   @(javascript)[jQuery|JavaScript|框架]</p>
 <p>   后续将逐渐补充上该项目中<strong>技术</strong>总结</p>
-<p>##一、widget 原理<br>现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。</p>
+<h2 id="一、widget-原理"><a href="#一、widget-原理" class="headerlink" title="一、widget 原理"></a>一、widget 原理</h2><p>现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。</p>
 <ol>
 <li>widget组件中，el指向是切片的单位，也就是说，每个widget组件，只作用于该区域：—可以使用事件代理机制，更小范围的寻找dom元素（不用满document选择元素了）； 分配模块管理，便于重用和维护。</li>
 <li>widget通过事件代理机制配置的events，充当了controller的角色，在view里触发各式各样的事件时，触发controller的代理方法，在处理方法中，又可以修改view的HTML。

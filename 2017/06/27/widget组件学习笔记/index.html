@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 ##一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，">
+<meta name="description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就">
 <meta name="keywords" content="javascript,jquery,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm详细使用">
 <meta property="og:url" content="http://yoursite.com/2017/06/27/widget组件学习笔记/index.html">
 <meta property="og:site_name" content="小确幸">
-<meta property="og:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 ##一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，">
-<meta property="og:updated_time" content="2017-06-27T03:52:00.834Z">
+<meta property="og:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就">
+<meta property="og:updated_time" content="2017-06-27T03:53:38.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm详细使用">
-<meta name="twitter:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 ##一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，">
+<meta name="twitter:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就">
 
 
 
@@ -377,7 +377,7 @@
       
         <h2 id="widget组件学习笔记"><a href="#widget组件学习笔记" class="headerlink" title="widget组件学习笔记"></a>widget组件学习笔记</h2><p>   @(javascript)[jQuery|JavaScript|框架]</p>
 <p>   后续将逐渐补充上该项目中<strong>技术</strong>总结</p>
-<p>##一、widget 原理<br>现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。</p>
+<h2 id="一、widget-原理"><a href="#一、widget-原理" class="headerlink" title="一、widget 原理"></a>一、widget 原理</h2><p>现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。</p>
 <ol>
 <li>widget组件中，el指向是切片的单位，也就是说，每个widget组件，只作用于该区域：—可以使用事件代理机制，更小范围的寻找dom元素（不用满document选择元素了）； 分配模块管理，便于重用和维护。</li>
 <li>widget通过事件代理机制配置的events，充当了controller的角色，在view里触发各式各样的事件时，触发controller的代理方法，在处理方法中，又可以修改view的HTML。<a id="more"></a></li>
@@ -386,7 +386,7 @@
 <li>规范widget实现：提供一个windows.Widget基类，windows.widget基类有一个静态方法extend，所有widget均由extend方法继承自该基类，extend方法返回的是widget的一个子类构造函数，基类中统一进行事件委托，在widget中提供统一的事件绑定方式。</li>
 <li>在widget中提供对页面加载各个节点的统一接口，都是页面加载的节点。</li>
 <li>切页面时回收内存： 切页时解除各引用关系，解绑各事件处理函数，使内存能自动回收。</li>
-<li>对外提供destroy接口，各人实现自己widget时可以重写destroy接口，实现切页时要做的操作。<br>##三、 API</li>
+<li>对外提供destroy接口，各人实现自己widget时可以重写destroy接口，实现切页时要做的操作。<h2 id="三、-API"><a href="#三、-API" class="headerlink" title="三、 API"></a>三、 API</h2></li>
 <li>extend： windows.widget的静态方法，接受一个对象作为参数，返回值是window.Widget的子类，extend接受的参数对象说明：</li>
 <li>参数对象属性以及属性值说明：</li>
 <li>el：属性值为字符串，包含该组件的容器，可以是selector—组件所有事情都会委托在该元素上，若不写，会委托在body上，但是建议写，一般是写class或者id值或其他selector带上widget名，避免跟同页面其他widget冲突。如策略监控系统的两个大id为widget-policy-find何widget-policy-alarm，分别对应两个文件夹命名为policyFind和policyAlarm。</li>
@@ -412,7 +412,7 @@
 4. 执行事件绑定：检测是否存在events配置项，用jQuery事件代替进行逐个绑定；
 5. 执行事件总线绑定：检测是否存在channels存在，用listener进行逐个处理；
 6. 最后绑定事件总线common.page，如果执行到，执行销毁，也就说：如果想要将一个组件的所有事件和事件总线进行解绑，就listener.trigger(&apos; common.page &apos; , &apos; pagexxxx &apos;);
-</code></pre>四、 结合当前策略监控平台绑定部分（一）：<br>前三条为总结现有代码以及查阅相关资料所整理，本条结合实例：<br>关于widget_data传递数据的过程：其实就是：tpl是一种后端模板，后端会将其处理转换成对应的前端的html相关。</li>
+</code></pre><h2 id="四、-结合当前策略监控平台绑定部分（一）："><a href="#四、-结合当前策略监控平台绑定部分（一）：" class="headerlink" title="四、 结合当前策略监控平台绑定部分（一）："></a>四、 结合当前策略监控平台绑定部分（一）：</h2>前三条为总结现有代码以及查阅相关资料所整理，本条结合实例：<br>关于widget_data传递数据的过程：其实就是：tpl是一种后端模板，后端会将其处理转换成对应的前端的html相关。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;%script%&#125;</div><div class="line">window.widgetData = &#123;%json_encode($widget_data)%&#125;;</div><div class="line">require(&apos;./App.es6&apos;);</div><div class="line">&#123;%/script%&#125;</div><div class="line">## 犯过几次错误:忘记写 `/` 号，导致无法解析完全</div><div class="line">	======其实就是等于========</div><div class="line"> require(&apos;./App.es6&apos;)(&#123;%json_encode($widget_data)%&#125;);</div></pre></td></tr></table></figure>
 <p>分解意思，在require引用es6文件时，将其看作一个函数，后边的( )表示函数立即执行，括号内的参数是解析的<code>$widegt_data</code>，后端在解析时（不管<code>$widget_data</code>）在什么地方，只要碰到了，在解析的时候就能转为前端可以处理的函数，使用最多的 <code>data = $widget_data</code>，也是一个意思，后端会解析<code>$widget_data</code>为对应的格式。<br>在实时监控平台中：<br>在vue中挂载：</p>
@@ -615,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#widget组件学习笔记"><span class="nav-number">1.</span> <span class="nav-text">widget组件学习笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-解决方案"><span class="nav-number">2.</span> <span class="nav-text">二、 解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#widget组件学习笔记"><span class="nav-number">1.</span> <span class="nav-text">widget组件学习笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、widget-原理"><span class="nav-number">2.</span> <span class="nav-text">一、widget 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-解决方案"><span class="nav-number">3.</span> <span class="nav-text">二、 解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、-API"><span class="nav-number">4.</span> <span class="nav-text">三、 API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、-结合当前策略监控平台绑定部分（一）："><span class="nav-number">5.</span> <span class="nav-text">四、 结合当前策略监控平台绑定部分（一）：</span></a></li></ol></div>
             
 
           </div>
