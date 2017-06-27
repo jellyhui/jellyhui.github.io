@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/27/widget组件学习笔记/index.html">
 <meta property="og:site_name" content="小确幸">
 <meta property="og:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 ##一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，">
-<meta property="og:updated_time" content="2017-06-27T03:20:18.402Z">
+<meta property="og:updated_time" content="2017-06-27T03:52:00.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm详细使用">
 <meta name="twitter:description" content="widget组件学习笔记   @(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 ##一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，">
@@ -380,7 +380,7 @@
 <p>##一、widget 原理<br>现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。</p>
 <ol>
 <li>widget组件中，el指向是切片的单位，也就是说，每个widget组件，只作用于该区域：—可以使用事件代理机制，更小范围的寻找dom元素（不用满document选择元素了）； 分配模块管理，便于重用和维护。</li>
-<li>widget通过事件代理机制配置的events，充当了controller的角色，在view里触发各式各样的事件时，触发controller的代理方法，在处理方法中，又可以修改view的HTML。</li>
+<li>widget通过事件代理机制配置的events，充当了controller的角色，在view里触发各式各样的事件时，触发controller的代理方法，在处理方法中，又可以修改view的HTML。<a id="more"></a></li>
 <li>由于大规模的拼接HTML会造成各种维护以及效率问题，所以引入了BaiduTemplate。</li>
 <li>widget中并没有单独分离出model层，而是将所有的逻辑交给controller，灵活性很高。<h2 id="二、-解决方案"><a href="#二、-解决方案" class="headerlink" title="二、 解决方案"></a>二、 解决方案</h2></li>
 <li>规范widget实现：提供一个windows.Widget基类，windows.widget基类有一个静态方法extend，所有widget均由extend方法继承自该基类，extend方法返回的是widget的一个子类构造函数，基类中统一进行事件委托，在widget中提供统一的事件绑定方式。</li>
