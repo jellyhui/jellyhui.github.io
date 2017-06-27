@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似：-  * ： 匹配0或多个除了‘/’以外的字符 - ？： 匹配单个除了‘/’以外的字符 -  ** ： 匹配多个字符包括‘/’ -  {} ： 可以让多个规则用，逗号分隔，起到或者的作用 -  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开头的，所以编写">
+<meta name="description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似： 12345* ： 匹配0或多个除了‘/’以外的字符？： 匹配单个除了‘/’以外的字符   ** ： 匹配多个字符包括‘/’   &amp;#123;&amp;#125; ： 可以让多个规则用，逗号分隔，起到或者的作用   ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开">
 <meta name="keywords" content="javascript,jquery,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node-glob学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/06/26/node-glob学习笔记/index.html">
 <meta property="og:site_name" content="小确幸">
-<meta property="og:description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似：-  * ： 匹配0或多个除了‘/’以外的字符 - ？： 匹配单个除了‘/’以外的字符 -  ** ： 匹配多个字符包括‘/’ -  {} ： 可以让多个规则用，逗号分隔，起到或者的作用 -  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开头的，所以编写">
-<meta property="og:updated_time" content="2017-06-26T10:27:34.948Z">
+<meta property="og:description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似： 12345* ： 匹配0或多个除了‘/’以外的字符？： 匹配单个除了‘/’以外的字符   ** ： 匹配多个字符包括‘/’   &amp;#123;&amp;#125; ： 可以让多个规则用，逗号分隔，起到或者的作用   ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开">
+<meta property="og:updated_time" content="2017-06-27T06:51:37.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-glob学习笔记">
-<meta name="twitter:description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似：-  * ： 匹配0或多个除了‘/’以外的字符 - ？： 匹配单个除了‘/’以外的字符 -  ** ： 匹配多个字符包括‘/’ -  {} ： 可以让多个规则用，逗号分隔，起到或者的作用 -  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开头的，所以编写">
+<meta name="twitter:description" content="##node-glob学习笔记  node-glob的常用用法说明： 匹配方式与正则类似： 12345* ： 匹配0或多个除了‘/’以外的字符？： 匹配单个除了‘/’以外的字符   ** ： 匹配多个字符包括‘/’   &amp;#123;&amp;#125; ： 可以让多个规则用，逗号分隔，起到或者的作用   ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。  注意的是： fis中的文件都是以/开">
 
 
 
@@ -377,13 +377,11 @@
       
         <p>##node-glob学习笔记</p>
 <ul>
-<li>node-glob的常用用法说明： 匹配方式与正则类似：<pre><code>-  * ： 匹配0或多个除了‘/’以外的字符
-- ？： 匹配单个除了‘/’以外的字符
--  ** ： 匹配多个字符包括‘/’
--  {} ： 可以让多个规则用，逗号分隔，起到或者的作用
--  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。
-</code></pre></li>
-<li>注意的是： fis中的文件都是以/开头的，所以编写规则时，请尽量严格以/开头，<br>当设置规则时，没有严格的以 / 开头，比如 a.js, 它匹配的是所有目录下面的 a.js, 包括：/a.js、/a/a.js、/a/b/a.js。 如果要严格只命中根目录下面的 /a.js, 请使用 fis.match(‘/a.js’)。<a id="more"></a></li>
+<li><p>node-glob的常用用法说明： 匹配方式与正则类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* ： 匹配0或多个除了‘/’以外的字符</div><div class="line">？： 匹配单个除了‘/’以外的字符</div><div class="line">   ** ： 匹配多个字符包括‘/’</div><div class="line">   &#123;&#125; ： 可以让多个规则用，逗号分隔，起到或者的作用</div><div class="line">   ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意的是： fis中的文件都是以/开头的，所以编写规则时，请尽量严格以/开头，<br>当设置规则时，没有严格的以 / 开头，比如 a.js, 它匹配的是所有目录下面的 a.js, 包括：/a.js、/a/a.js、/a/b/a.js。 如果要严格只命中根目录下面的 /a.js, 请使用 fis.match(‘/a.js’)。</p>
+<a id="more"></a></li>
 <li><p>另外 /foo/<em>.js， 只会命中 /foo 目录下面的所有 js 文件，不包含子目录。 而 /foo/**/</em>.js 是命中所有子目录以及其子目录下面的所有 js 文件，不包含当前目录下面的 js 文件。 如果需要命中 foo 目录下面以及所有其子目录下面的 js 文件，请使用 /foo/**.js</p>
 </li>
 <li><p>扩展规则：</p>
@@ -393,24 +391,23 @@
 </code></pre></li>
 <li><p>捕获分组：<br>使用 node-glob 捕获的分组，可以用于其他属性的设定，如 release, url, id 等。使用的方式与正则替换类似，我们可以用 $1, $2, $3 来代表相应的捕获分组。其中 $0 代表的是 match 到的整个字符串。</p>
 </li>
-<li><p>fis.match(‘/a/(<strong>.js)’, {<br>release: ‘/b/$1’ // $1 代表 (</strong>.js) 匹配的内容<br>});</p>
-</li>
 </ul>
-<ul>
-<li>fis.match(‘/a/(<strong>.js)’, {<br>release: ‘/b/$0’ // $0 代表 /a/(</strong>.js) 匹配的内容<br>});</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> fis.match(&apos;/a/(**.js)&apos;, &#123;</div><div class="line">	release: &apos;/b/$1&apos; // $1 代表 (**.js) 匹配的内容</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> fis.match(&apos;/a/(**.js)&apos;, &#123;</div><div class="line">release: &apos;/b/$0&apos; // $0 代表 /a/(**.js) 匹配的内容</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
 <li>特殊用法：<ul>
 <li>::package用来匹配fis的打包过程中；</li>
-<li>::text匹配文本文件；<br>默认识别这类后缀的文件。<br>[<br>‘css’, ‘tpl’, ‘js’, ‘php’,<br>‘txt’, ‘json’, ‘xml’, ‘htm’,<br>‘text’, ‘xhtml’, ‘html’, ‘md’,<br>‘conf’, ‘po’, ‘config’, ‘tmpl’,<br>‘coffee’, ‘less’, ‘sass’, ‘jsp’,<br>‘scss’, ‘manifest’, ‘bak’, ‘asp’,<br>‘tmp’, ‘haml’, ‘jade’, ‘aspx’,<br>‘ashx’, ‘java’, ‘py’, ‘c’, ‘cpp’,<br>‘h’, ‘cshtml’, ‘asax’, ‘master’,<br>‘ascx’, ‘cs’, ‘ftl’, ‘vm’, ‘ejs’,<br>‘styl’, ‘jsx’, ‘handlebars’<br>]</li>
+<li>::text匹配文本文件；<br>默认识别这类后缀的文件。</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">	&apos;css&apos;, &apos;tpl&apos;, &apos;js&apos;, &apos;php&apos;,</div><div class="line">	&apos;txt&apos;, &apos;json&apos;, &apos;xml&apos;, &apos;htm&apos;,</div><div class="line">	&apos;text&apos;, &apos;xhtml&apos;, &apos;html&apos;, &apos;md&apos;,</div><div class="line">	&apos;conf&apos;, &apos;po&apos;, &apos;config&apos;, &apos;tmpl&apos;,</div><div class="line">	&apos;coffee&apos;, &apos;less&apos;, &apos;sass&apos;, &apos;jsp&apos;,</div><div class="line">	&apos;scss&apos;, &apos;manifest&apos;, &apos;bak&apos;, &apos;asp&apos;,</div><div class="line">	&apos;tmp&apos;, &apos;haml&apos;, &apos;jade&apos;, &apos;aspx&apos;,</div><div class="line">	&apos;ashx&apos;, &apos;java&apos;, &apos;py&apos;, &apos;c&apos;, &apos;cpp&apos;,</div><div class="line">	&apos;h&apos;, &apos;cshtml&apos;, &apos;asax&apos;, &apos;master&apos;,</div><div class="line">	&apos;ascx&apos;, &apos;cs&apos;, &apos;ftl&apos;, &apos;vm&apos;, &apos;ejs&apos;,</div><div class="line">	&apos;styl&apos;, &apos;jsx&apos;, &apos;handlebars&apos;</div><div class="line">]</div></pre></td></tr></table></figure>
 <p>如果你希望命中的文件类型不在列表中，请通过 fis.set(‘project.fileType.text’) 扩展，多个后缀用 , 分割。</p>
 <pre><code>- fis.set(&apos;project.fileType.text&apos;, &apos;cpp,hhp&apos;);
 
 -  :: image用来匹配文件类型为图片的文件。 默认识别的后缀为：
-</code></pre><p>默认识别这类后缀的文件。<br>[<br>‘svg’, ‘tif’, ‘tiff’, ‘wbmp’,<br>‘png’, ‘bmp’, ‘fax’, ‘gif’,<br>‘ico’, ‘jfif’, ‘jpe’, ‘jpeg’,<br>‘jpg’, ‘woff’, ‘cur’, ‘webp’,<br>‘swf’, ‘ttf’, ‘eot’, ‘woff2’<br>]</p>
+</code></pre><p>默认识别这类后缀的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">	&apos;svg&apos;, &apos;tif&apos;, &apos;tiff&apos;, &apos;wbmp&apos;,</div><div class="line">	&apos;png&apos;, &apos;bmp&apos;, &apos;fax&apos;, &apos;gif&apos;,</div><div class="line">	&apos;ico&apos;, &apos;jfif&apos;, &apos;jpe&apos;, &apos;jpeg&apos;,</div><div class="line">	&apos;jpg&apos;, &apos;woff&apos;, &apos;cur&apos;, &apos;webp&apos;,</div><div class="line">	&apos;swf&apos;, &apos;ttf&apos;, &apos;eot&apos;, &apos;woff2&apos;</div><div class="line">]</div></pre></td></tr></table></figure>
 <p>如果你希望命中的文件类型不在列表中，请通过 fis.set(‘project.fileType.image’) 扩展，多个后缀用 , 分割。</p>
 <pre><code>- fis.set(&apos;project.fileType.image&apos;, &apos;raw,bpg&apos;);
 
@@ -419,15 +416,10 @@
 - *.html:scss用来命中html文件中的scss部分。
 </code></pre><ul>
 <li><p>注意事项：node-glob扩展可能还存在问题，分组() 与{}搭配使用时存在缺陷：如：<br>/a/({b,c}/<strong>.js) 会拆分成并列的两个规则 /a/(b/</strong>.js) 和 /a/(c/<strong>.js)，当这两个合成一个正则的时候，这个时候问题来了， 一个分组变成了两个分组，分组 1 为 (b/</strong>.js) 分组 2 为 (c/**.js)。那么当希望获取捕获信息时，不能按原来的分组序号去获取了。</p>
-</li>
-<li><p>// 错误<br>fis.match(‘/a/({b,c}/**.js)’, {</p>
-</li>
-<li>release: ‘/static/$1’</li>
-<li><p>});<br>// 正确<br>fis.match(‘/a/({b,c}/**.js)’, {</p>
-</li>
-<li><p>release: ‘/static/$1$2’</p>
-</li>
-<li>});</li>
+<p>   // 错误</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fis.match(&apos;/a/(&#123;b,c&#125;/**.js)&apos;, &#123;</div><div class="line">   release: &apos;/static/$1&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>  // 正确</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fis.match(&apos;/a/(&#123;b,c&#125;/**.js)&apos;, &#123;</div><div class="line"></div><div class="line">  release: &apos;/static/$1$2&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></li>
 </ul>
 
       

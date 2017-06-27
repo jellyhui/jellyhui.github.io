@@ -834,13 +834,10 @@
         
           <p>##node-glob学习笔记</p>
 <ul>
-<li>node-glob的常用用法说明： 匹配方式与正则类似：<pre><code>-  * ： 匹配0或多个除了‘/’以外的字符
-- ？： 匹配单个除了‘/’以外的字符
--  ** ： 匹配多个字符包括‘/’
--  {} ： 可以让多个规则用，逗号分隔，起到或者的作用
--  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。
-</code></pre></li>
-<li>注意的是： fis中的文件都是以/开头的，所以编写规则时，请尽量严格以/开头，<br>当设置规则时，没有严格的以 / 开头，比如 a.js, 它匹配的是所有目录下面的 a.js, 包括：/a.js、/a/a.js、/a/b/a.js。 如果要严格只命中根目录下面的 /a.js, 请使用 fis.match(‘/a.js’)。
+<li><p>node-glob的常用用法说明： 匹配方式与正则类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* ： 匹配0或多个除了‘/’以外的字符</div><div class="line">？： 匹配单个除了‘/’以外的字符</div><div class="line">   ** ： 匹配多个字符包括‘/’</div><div class="line">   &#123;&#125; ： 可以让多个规则用，逗号分隔，起到或者的作用</div><div class="line">   ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意的是： fis中的文件都是以/开头的，所以编写规则时，请尽量严格以/开头，<br>当设置规则时，没有严格的以 / 开头，比如 a.js, 它匹配的是所有目录下面的 a.js, 包括：/a.js、/a/a.js、/a/b/a.js。 如果要严格只命中根目录下面的 /a.js, 请使用 fis.match(‘/a.js’)。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/26/node-glob学习笔记/#more" rel="contents">
