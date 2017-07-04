@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="huiTine,jellyhui" />
+  <meta name="keywords" content="javascript,jquery,vue," />
 
 
 
@@ -96,14 +96,15 @@
 
 
 <meta name="description" content="widget组件学习笔记@(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就是说，">
+<meta name="keywords" content="javascript,jquery,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小确幸">
+<meta property="og:title" content="widget学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/06/27/widget组件学习笔记/index.html">
 <meta property="og:site_name" content="小确幸">
 <meta property="og:description" content="widget组件学习笔记@(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就是说，">
-<meta property="og:updated_time" content="2017-06-29T07:10:29.077Z">
+<meta property="og:updated_time" content="2017-07-04T07:33:20.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小确幸">
+<meta name="twitter:title" content="widget学习笔记">
 <meta name="twitter:description" content="widget组件学习笔记@(javascript)[jQuery|JavaScript|框架]    后续将逐渐补充上该项目中技术总结 一、widget 原理现在webapp已经全面升级为单页系统，单页系统因为是局部刷新页面，在切页时仍会保留前一个页面的部分状态，比如声明的变量，在某些元素上绑定的事件，导致相关内存不能自动回收，存在内存泄露。  widget组件中，el指向是切片的单位，也就是说，">
 
 
@@ -138,7 +139,7 @@
 
 
 
-  <title> | 小确幸</title>
+  <title>widget学习笔记 | 小确幸</title>
   
 
 
@@ -294,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">widget学习笔记</h1>
         
 
         <div class="post-meta">
@@ -316,6 +317,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -359,7 +382,7 @@
 <li>widget组件中，el指向是切片的单位，也就是说，每个widget组件，只作用于该区域：—可以使用事件代理机制，更小范围的寻找dom元素（不用满document选择元素了）； 分配模块管理，便于重用和维护。</li>
 <li>widget通过事件代理机制配置的events，充当了controller的角色，在view里触发各式各样的事件时，触发controller的代理方法，在处理方法中，又可以修改view的HTML。</li>
 <li>由于大规模的拼接HTML会造成各种维护以及效率问题，所以引入了BaiduTemplate。</li>
-<li>widget中并没有单独分离出model层，而是将所有的逻辑交给controller，灵活性很高。<h2 id="二、-解决方案"><a href="#二、-解决方案" class="headerlink" title="二、 解决方案"></a>二、 解决方案</h2></li>
+<li>widget中并没有单独分离出model层，而是将所有的逻辑交给controller，灵活性很高。<h2 id="二、-解决方案"><a href="#二、-解决方案" class="headerlink" title="二、 解决方案"></a>二、 解决方案</h2><a id="more"></a></li>
 <li>规范widget实现：提供一个windows.Widget基类，windows.widget基类有一个静态方法extend，所有widget均由extend方法继承自该基类，extend方法返回的是widget的一个子类构造函数，基类中统一进行事件委托，在widget中提供统一的事件绑定方式。</li>
 <li>在widget中提供对页面加载各个节点的统一接口，都是页面加载的节点。</li>
 <li>切页面时回收内存： 切页时解除各引用关系，解绑各事件处理函数，使内存能自动回收。</li>
@@ -431,6 +454,16 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/jquery/" rel="tag"># jquery</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
       
 
       
@@ -532,7 +565,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -748,7 +781,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2017/06/27/widget组件学习笔记/';
           this.page.identifier = '2017/06/27/widget组件学习笔记/';
-          this.page.title = '';
+          this.page.title = 'widget学习笔记';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
