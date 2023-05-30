@@ -1,4 +1,219 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>使用hexo搭建个人博客</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">tianhui</a></div><div class="about-me">huizi77xl@sina.com</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/jellyhui"></span><a href="https://github.com/jellyhui" target="_blank" title="https://github.com/jellyhui">https://github.com/jellyhui</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="huizi77xl@sina.com"></span><span>huizi77xl@sina.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="huizi_77"></span><span>huizi_77</span></li></ul></div></div></div></header><div class="container post"><section class="article"><div class="title">使用hexo搭建个人博客</div><div class="date">写于2017年01月26日</div><div class="content"><h3 id="使用hexo搭建github-pages"><a href="#使用hexo搭建github-pages" class="headerlink" title="使用hexo搭建github pages"></a>使用hexo搭建github pages</h3><p>前言：<br>@(个人博客)[github-pages|hexo|博客]<br>以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jellyhui.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"posy","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="使用hexo搭建github pages前言：@(个人博客)[github-pages|hexo|博客]以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。 github pages的注册一. 首先，你得有一个github的账号，这个注册过程就不详细描述了，有账号，然后建立与自己账号名相同的仓库名： y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建个人博客">
+<meta property="og:url" content="http://jellyhui.github.io/2017/01/26/hexo%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="使用hexo搭建github pages前言：@(个人博客)[github-pages|hexo|博客]以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。 github pages的注册一. 首先，你得有一个github的账号，这个注册过程就不详细描述了，有账号，然后建立与自己账号名相同的仓库名： y">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jellyhui.github.io/images/node.png">
+<meta property="article:published_time" content="2017-01-26T08:20:08.000Z">
+<meta property="article:modified_time" content="2023-05-30T03:52:46.652Z">
+<meta property="article:author" content="tianhui">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jellyhui.github.io/images/node.png">
+
+<link rel="canonical" href="http://jellyhui.github.io/2017/01/26/hexo%E6%90%AD%E5%BB%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>使用hexo搭建个人博客 | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jellyhui.github.io/2017/01/26/hexo%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/./images/avatar.png">
+      <meta itemprop="name" content="tianhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用hexo搭建个人博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-01-26 16:20:08" itemprop="dateCreated datePublished" datetime="2017-01-26T16:20:08+08:00">2017-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-30 11:52:46" itemprop="dateModified" datetime="2023-05-30T11:52:46+08:00">2023-05-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">基础知识</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="使用hexo搭建github-pages"><a href="#使用hexo搭建github-pages" class="headerlink" title="使用hexo搭建github pages"></a>使用hexo搭建github pages</h3><p>前言：<br>@(个人博客)[github-pages|hexo|博客]<br>以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。</p>
 <h4 id="github-pages的注册"><a href="#github-pages的注册" class="headerlink" title="github pages的注册"></a>github pages的注册</h4><p>一. 首先，你得有一个github的账号，这个注册过程就不详细描述了，有账号，然后建立与自己账号名相同的仓库名： yourname&#x2F;yourname.github.io。</p>
 <h5 id="本地安装环境"><a href="#本地安装环境" class="headerlink" title="本地安装环境"></a>本地安装环境</h5><p>二. 本地安装环境（以windows为例）：</p>
 <ol>
@@ -11,7 +226,7 @@
 <li>使用npm install -g hexo全局安装hexo 或者 npm install hexo –save。<br>目前我个人安装环境版本如图：版本</li>
 </ol>
 <h4 id="SSH的生成"><a href="#SSH的生成" class="headerlink" title="SSH的生成"></a>SSH的生成</h4><p>三. 注意github使用过程中，别忘记生成ssh！</p>
-<p>$ git config –global user.name “jellyhui”<br>$ git config –global user.email <a href="mailto:&#120;&#x78;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#120;&#x78;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a><br>$ssh-keygen -t rsa -C ‘<a href="mailto:&#x78;&#120;&#x78;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;">&#x78;&#120;&#x78;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>‘<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的c盘下的user中找到 ~&#x2F;.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。然后点击个人头像去个人信息的settings中找到 SSH and GPG keys， title主要是为了方便自己识别是哪台PC，在SSH一栏，复制id_rsa.pub内的内容即可。</p>
+<p>$ git config –global user.name “jellyhui”<br>$ git config –global user.email <a href="mailto:&#120;&#120;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;">&#120;&#120;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;</a><br>$ssh-keygen -t rsa -C ‘<a href="mailto:&#x78;&#120;&#120;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#x78;&#120;&#120;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a>‘<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的c盘下的user中找到 ~&#x2F;.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。然后点击个人头像去个人信息的settings中找到 SSH and GPG keys， title主要是为了方便自己识别是哪台PC，在SSH一栏，复制id_rsa.pub内的内容即可。</p>
 <h4 id="deploy到repo"><a href="#deploy到repo" class="headerlink" title="deploy到repo"></a>deploy到repo</h4><p>四. 当环境均安装就绪后，就可以尽情使用hexo啦！<br>主要过程分为三步：<br>1&gt; . 创建github的repository； new repository -不详细说，注意repository的名字必须与用户名一样即可。<br>2&gt;. 使用hexo生成pages</p>
 <pre><code>1. hexo init  &lt;文件夹名&gt; : hexo生成文件夹并初始化；
 2. cd &lt;文件夹&gt; 并且  npm install： 安装所需环境配置；新建完成后，文件夹下的目录如下：
@@ -51,16 +266,224 @@
 3. 打开 yourname.github.io就可以看到在效果啦~~
 4. 后续推送代码时，记得先clone仓库到本地，然后再编辑更新哟~~
 </code></pre>
-</div><div class="tags"><a class="tag-link" href="/tags/js/" rel="tag">js</a></div></section></div><div class="container"><ul class="nav"><li>上一篇：<a href="/2017/02/05/fis3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">fis3学习笔记</a></li><li>下一篇：<a href="/2016/06/21/alibaba/">阿里巴巴前端面试</a></li></ul></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
-<script src="/script/jquery.min.js"></script>
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    </div>
 
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
+    
+    
+        
 
-<script src="/script/index.js"></script>
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-61220413-1', 'auto');
-ga('send', 'pageview');</script>
-<script src="/script/post.js"></script>
-</body></html>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>tianhui
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://jellyhui.github.io/2017/01/26/hexo%E6%90%AD%E5%BB%BA/" title="使用hexo搭建个人博客">http://jellyhui.github.io/2017/01/26/hexo搭建/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/06/21/alibaba/" rel="prev" title="阿里巴巴前端面试">
+      <i class="fa fa-chevron-left"></i> 阿里巴巴前端面试
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/02/05/fis3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="fis3学习笔记">
+      fis3学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-pages"><span class="nav-number">1.</span> <span class="nav-text">使用hexo搭建github pages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github-pages%E7%9A%84%E6%B3%A8%E5%86%8C"><span class="nav-number">1.1.</span> <span class="nav-text">github pages的注册</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.1.</span> <span class="nav-text">本地安装环境</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">SSH的生成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deploy%E5%88%B0repo"><span class="nav-number">1.3.</span> <span class="nav-text">deploy到repo</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="tianhui"
+      src="/./images/avatar.png">
+  <p class="site-author-name" itemprop="name">tianhui</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tianhui</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
