@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>node-blog知识整理</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">tianhui</a></div><div class="about-me">huizi77xl@sina.com</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/jellyhui"></span><a href="https://github.com/jellyhui" target="_blank" title="https://github.com/jellyhui">https://github.com/jellyhui</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="huizi77xl@sina.com"></span><span>huizi77xl@sina.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="huizi_77"></span><span>huizi_77</span></li></ul></div></div></div></header><div class="container post"><section class="article"><div class="title">node-blog知识整理</div><div class="date">写于2017年04月05日</div><div class="content"><ol>
+<li><p>node-glob的常用用法说明： 匹配方式与正则类似：<br> *  * ： 匹配0或多个除了‘&#x2F;’以外的字符<br> * ？： 匹配单个除了‘&#x2F;’以外的字符<br> *  ** ： 匹配多个字符包括‘&#x2F;’<br> *  {} ： 可以让多个规则用，逗号分隔，起到或者的作用<br> *  ！ ：出现在规则的开头，表示取反，即匹配不命中后面规则的文件。</p>
+</li>
+<li><p>注意的是： fis中的文件都是以&#x2F;开头的，所以编写规则时，请尽量严格以&#x2F;开头，<br>当设置规则时，没有严格的以 &#x2F; 开头，比如 a.js, 它匹配的是所有目录下面的 a.js, 包括：&#x2F;a.js、&#x2F;a&#x2F;a.js、&#x2F;a&#x2F;b&#x2F;a.js。 如果要严格只命中根目录下面的 &#x2F;a.js, 请使用 fis.match(‘&#x2F;a.js’)。<br>另外 &#x2F;foo&#x2F;<em>.js， 只会命中 &#x2F;foo 目录下面的所有 js 文件，不包含子目录。 而 &#x2F;foo&#x2F;**&#x2F;</em>.js 是命中所有子目录以及其子目录下面的所有 js 文件，不包含当前目录下面的 js 文件。 如果需要命中 foo 目录下面以及所有其子目录下面的 js 文件，请使用 &#x2F;foo&#x2F;**.js</p>
+</li>
+<li><p>扩展规则：<br> * 匹配某目录下的所有js文件，fis扩展了node-glob的规则： a&#x2F;<strong>.js–表示匹配到a目录以及其子目录下的所有js文件。<br> * 括号用法扩展： fis.match(‘a&#x2F;</strong>.js’,{release: ‘’&#x2F;b&#x2F;$1})：让a目录下的所有js发布到b目录下，保留原始文件名。</p>
+</li>
+<li><p>捕获分组：<br>使用 node-glob 捕获的分组，可以用于其他属性的设定，如 release, url, id 等。使用的方式与正则替换类似，我们可以用 $1, $2, $3 来代表相应的捕获分组。其中 $0 代表的是 match 到的整个字符串。<br>fis.match(‘&#x2F;a&#x2F;(<strong>.js)’, {<br> release: ‘&#x2F;b&#x2F;$1’ &#x2F;&#x2F; $1 代表 (</strong>.js) 匹配的内容<br>});<br>fis.match(‘&#x2F;a&#x2F;(<strong>.js)’, {<br> release: ‘&#x2F;b&#x2F;$0’ &#x2F;&#x2F; $0 代表 &#x2F;a&#x2F;(</strong>.js) 匹配的内容<br>});</p>
+</li>
+<li><p>特殊用法：</p>
+<ol>
+<li>::package用来匹配fis的打包过程中；</li>
+<li>::text匹配文本文件；<br>默认识别这类后缀的文件。<br>[<br>‘css’, ‘tpl’, ‘js’, ‘php’,<br>‘txt’, ‘json’, ‘xml’, ‘htm’,<br>‘text’, ‘xhtml’, ‘html’, ‘md’,<br>‘conf’, ‘po’, ‘config’, ‘tmpl’,<br>‘coffee’, ‘less’, ‘sass’, ‘jsp’,<br>‘scss’, ‘manifest’, ‘bak’, ‘asp’,<br>‘tmp’, ‘haml’, ‘jade’, ‘aspx’,<br>‘ashx’, ‘java’, ‘py’, ‘c’, ‘cpp’,<br>‘h’, ‘cshtml’, ‘asax’, ‘master’,<br>‘ascx’, ‘cs’, ‘ftl’, ‘vm’, ‘ejs’,<br>‘styl’, ‘jsx’, ‘handlebars’<br>]<br>如果你希望命中的文件类型不在列表中，请通过 fis.set(‘project.fileType.text’) 扩展，多个后缀用 , 分割。<br>fis.set(‘project.fileType.text’, ‘cpp,hhp’);</li>
+<li>:: image用来匹配文件类型为图片的文件。 默认识别的后缀为：<br>默认识别这类后缀的文件。<br>[<br>‘svg’, ‘tif’, ‘tiff’, ‘wbmp’,<br>‘png’, ‘bmp’, ‘fax’, ‘gif’,<br>‘ico’, ‘jfif’, ‘jpe’, ‘jpeg’,<br>‘jpg’, ‘woff’, ‘cur’, ‘webp’,<br>‘swf’, ‘ttf’, ‘eot’, ‘woff2’<br>]<br>如果你希望命中的文件类型不在列表中，请通过 fis.set(‘project.fileType.image’) 扩展，多个后缀用 , 分割。<br>fis.set(‘project.fileType.image’, ‘raw,bpg’);</li>
+<li>*.html:css 用来匹配命中的html文件中内嵌的css部分。fis3 htmllike的文件内嵌的js内容也会走单文件编译流程，默认制作标准化处理，如果想压缩，可以进行如下配置： fis.match(‘*html:js’,{optimizer:fis.plugin(‘uglify-js’)})；</li>
+<li>*.html:inline-style用来匹配命中的html文件中的内联样式，可以配置些auto prefix之类的插件。</li>
+<li>*.html:scss用来命中html文件中的scss部分。</li>
+</ol>
+</li>
+<li><p>注意事项：node-glob扩展可能还存在问题，分组() 与{}搭配使用时存在缺陷：如：<br>&#x2F;a&#x2F;({b,c}&#x2F;<strong>.js) 会拆分成并列的两个规则 &#x2F;a&#x2F;(b&#x2F;</strong>.js) 和 &#x2F;a&#x2F;(c&#x2F;<strong>.js)，当这两个合成一个正则的时候，这个时候问题来了， 一个分组变成了两个分组，分组 1 为 (b&#x2F;</strong>.js) 分组 2 为 (c&#x2F;<strong>.js)。那么当希望获取捕获信息时，不能按原来的分组序号去获取了。<br>&#x2F;&#x2F; 错误<br>fis.match(‘&#x2F;a&#x2F;({b,c}&#x2F;</strong>.js)’, {<br>  release: ‘&#x2F;static&#x2F;$1’<br>});</p>
+</li>
+</ol>
+<p>&#x2F;&#x2F; 正确<br>fis.match(‘&#x2F;a&#x2F;({b,c}&#x2F;**.js)’, {<br>  release: ‘&#x2F;static&#x2F;$1$2’<br>});</p>
+</div><div class="tags"><a class="tag-link" href="/tags/js-%E6%A1%86%E6%9E%B6-%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" rel="tag">js | 框架 | 打包工具</a></div></section></div><div class="container"><ul class="nav"><li>上一篇：<a href="/2017/12/11/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88/">常见一些前端问题</a></li><li>下一篇：<a href="/2017/03/01/npm%E7%9B%B8%E5%85%B3/">npm相关知识</a></li></ul></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
+<script src="/script/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/script/index.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61220413-1', 'auto');
+ga('send', 'pageview');</script>
+<script src="/script/post.js"></script>
+</body></html>

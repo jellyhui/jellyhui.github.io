@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>使用hexo搭建个人博客</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">tianhui</a></div><div class="about-me">huizi77xl@sina.com</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/jellyhui"></span><a href="https://github.com/jellyhui" target="_blank" title="https://github.com/jellyhui">https://github.com/jellyhui</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="huizi77xl@sina.com"></span><span>huizi77xl@sina.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="huizi_77"></span><span>huizi_77</span></li></ul></div></div></div></header><div class="container post"><section class="article"><div class="title">使用hexo搭建个人博客</div><div class="date">写于2017年01月26日</div><div class="content"><h3 id="使用hexo搭建github-pages"><a href="#使用hexo搭建github-pages" class="headerlink" title="使用hexo搭建github pages"></a>使用hexo搭建github pages</h3><p>前言：<br>@(个人博客)[github-pages|hexo|博客]<br>以前使用印象笔记或者博客园来写一些学习笔记，一直都没能上传到自己的个人仓库里，现在开始慢慢将原来所做所学内容放在个人github博客中，温故而知新。</p>
+<h4 id="github-pages的注册"><a href="#github-pages的注册" class="headerlink" title="github pages的注册"></a>github pages的注册</h4><p>一. 首先，你得有一个github的账号，这个注册过程就不详细描述了，有账号，然后建立与自己账号名相同的仓库名： yourname&#x2F;yourname.github.io。</p>
+<h5 id="本地安装环境"><a href="#本地安装环境" class="headerlink" title="本地安装环境"></a>本地安装环境</h5><p>二. 本地安装环境（以windows为例）：</p>
+<ol>
+<li>git安装： 去官网下载git工具，基本上一路next，也可根据自己需要是否安装其他以及快捷方式等等选择，git常用操作git add * –&gt; git commit -m ‘提交备注’； </li>
+<li>node环境： 去<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node官网</a> 下载node，安装node环境。<blockquote>
+<p><img src="/../images/node.png" alt="node官网目前显示版本"> 最好使用稳定版本6.x，最新的不一定稳定哈，注意检查环境变量(一般情况下node安装过程中会自动将安装路径添加到环境变量中)，若因不知名原因无，在环境变量的path的值中手动加入node的安装目录。</p>
+</blockquote>
+</li>
+<li>npm、cnpm： 现在的node包下载之后，已经集成了npm，所以无需再做别的操作，因npm链接国外不稳定，可以设置淘宝镜像cnpm： <code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org </code><br>—-详细信息可自行查询<a target="_blank" rel="noopener" href="https://npm.taobao.org/">官网链接</a>。</li>
+<li>使用npm install -g hexo全局安装hexo 或者 npm install hexo –save。<br>目前我个人安装环境版本如图：版本</li>
+</ol>
+<h4 id="SSH的生成"><a href="#SSH的生成" class="headerlink" title="SSH的生成"></a>SSH的生成</h4><p>三. 注意github使用过程中，别忘记生成ssh！</p>
+<p>$ git config –global user.name “jellyhui”<br>$ git config –global user.email <a href="mailto:&#120;&#x78;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#120;&#x78;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a><br>$ssh-keygen -t rsa -C ‘<a href="mailto:&#x78;&#120;&#x78;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;">&#x78;&#120;&#x78;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>‘<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的c盘下的user中找到 ~&#x2F;.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。然后点击个人头像去个人信息的settings中找到 SSH and GPG keys， title主要是为了方便自己识别是哪台PC，在SSH一栏，复制id_rsa.pub内的内容即可。</p>
+<h4 id="deploy到repo"><a href="#deploy到repo" class="headerlink" title="deploy到repo"></a>deploy到repo</h4><p>四. 当环境均安装就绪后，就可以尽情使用hexo啦！<br>主要过程分为三步：<br>1&gt; . 创建github的repository； new repository -不详细说，注意repository的名字必须与用户名一样即可。<br>2&gt;. 使用hexo生成pages</p>
+<pre><code>1. hexo init  &lt;文件夹名&gt; : hexo生成文件夹并初始化；
+2. cd &lt;文件夹&gt; 并且  npm install： 安装所需环境配置；新建完成后，文件夹下的目录如下：
+        .
+        ├── _config.yml---网站的配置文件，可以在其中配置网站的大部分参数
+        ├── package.json ---应用程序的信息
+        ├── scaffolds ---资源文件夹，是用来存放用户资源的地方
+        ├── source ---资源文件夹，是用来存放用户资源的地方
+        |   ├── _drafts
+        |   └── _posts
+        └── themes ---主题文件夹，Hexo会根据主题来生成不同的静态页面
+
+3. 生成之后，主要配置_config.yml文件，常见配置等说明后续再进一步说明。目前最需要的是 
+    title是博客标题，author为作者名
+ `deploy:
+  type: git 
+  repo: git@github.com/yourname:yourname.github.io.git或者https://github.com/yourname/yourname.github.io.git
+  branch: master`
+4.   在source文件夹下，有_posts文件夹，存放用户自己的md文件，也就是需要上传的文件，需要注意的是，自己的md文件中开头需要用
+</code></pre>
+<pre><code>        ---
+            title: md文件的名字
+            date: 书写时间
+            tags: [mysql,php,redis]---标签的名字s
+            categories: [mysql] ---分类的名字
+        ---
+
+```来表明这篇文章应该所属的分类以及标签【注意：距离最左边不能有空格】。
+5.  &gt;  hexo g ---生成静态页面，生成的内容在public文件夹下
+    &gt;  hexo s ---启动本地服务localhos://127.0.0.1:4000，进行文章预览调试；
+    &gt;  hexo s --debug 命令可以用来调试
+    &gt;  hexo d 推送代码到自己在config.yml中配置的repo上。
+3&gt;. 推送代码：
+
+1. hexo deploy ：推送对象是在_config.yml中配置的repo对象（一般是SSH对象）；
+2. 推送时若提示git not found之类的错误，注意检查是否安装插件： $`npm install hexo-deployer-git --save`；
+3. 打开 yourname.github.io就可以看到在效果啦~~
+4. 后续推送代码时，记得先clone仓库到本地，然后再编辑更新哟~~
+</code></pre>
+</div><div class="tags"><a class="tag-link" href="/tags/js/" rel="tag">js</a></div></section></div><div class="container"><ul class="nav"><li>上一篇：<a href="/2017/02/05/fis3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">fis3学习笔记</a></li><li>下一篇：<a href="/2016/06/21/alibaba/">阿里巴巴前端面试</a></li></ul></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
+<script src="/script/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/script/index.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61220413-1', 'auto');
+ga('send', 'pageview');</script>
+<script src="/script/post.js"></script>
+</body></html>

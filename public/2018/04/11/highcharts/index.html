@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>highcharts 一些小点</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">tianhui</a></div><div class="about-me">huizi77xl@sina.com</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/jellyhui"></span><a href="https://github.com/jellyhui" target="_blank" title="https://github.com/jellyhui">https://github.com/jellyhui</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="huizi77xl@sina.com"></span><span>huizi77xl@sina.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="huizi_77"></span><span>huizi_77</span></li></ul></div></div></div></header><div class="container post"><section class="article"><div class="title">highcharts 一些小点</div><div class="date">写于2018年04月11日</div><div class="content"><ol>
+<li>关于highcharts： 由纯JavaScript编写的Html5图表库，全部源码开放，个人以及非商业用途可以任意使用及源代码编辑。</li>
+<li>highcharts系列软件包含highchairs JS&#x2F; highstock JS&#x2F; highmaps JS 共三款软件。<ol>
+<li>highcharts是纯JavaScript编写的图表库；</li>
+<li>highstock是纯JavaScript编写的股票图标控件，可以开发股票走势或大数据量的时间轴突变，包含多个高级导航组件： 预设置数据时间范围，日期选择器，滚动条，平移，缩放功能。</li>
+<li>highmaps是基于HTML5的优秀地图组件。继承了highcharts简单易用的特性，利用它可以方便快捷的创建用于展现销售&#x2F;选举结果等其他与地理位置关系密切的交互性地图图表。</li>
+</ol>
+</li>
+<li>可以在js文件中引入官方提供的cdn服务，也可以从官方下载资源包引入使用，也可以与vue等结合使用，npm安装，在main.js文件中import或者require后，直接使用。具体vue使用操作步骤： <ol>
+<li>npm install highcharts -（参数自己看情况选择，-g全局，—save上线后依赖，–save-dev仅在开发时依赖）；</li>
+<li>在需要的文件中import Highcharts from ‘highcharts’引入， 就可以在mounted时 使用 Highcharts.chart（图表唯一的id名， 图表的option）；</li>
+<li>option可以在上述文件中写入，也可以创建option组件，专门export 需要编辑的option之类。然后在父组件中引用调用。</li>
+</ol>
+</li>
+<li>注意： highstock是完全包含了highcharts的，所以没必要完全将两个文件都引入；highmaps 可以单独使用也可以通过地图模块来引用，如果只需要 highmaps 功能，那么只需要引入 highmaps.js 即可。</li>
+<li>图表组成：标题 title， 坐标轴axis， 数据列series， 数据提示框tooltip，图例legend， 版权标签credits等。另外还可以包含导出功能按钮exporting， 标识线 plotLines， 标示区域 plotBands，数据标签 dataLabels。<ol>
+<li>highcharts实例化中绑定容器的方式有很多种方式： <ol>
+<li>通过构造函数： Highcharts.chart（‘id名字’， { 配置 }）；</li>
+<li>通过chart.renderTo来指定： Highcharts.chart（  { chart : {  renderTo： ‘id名 ’} }  ）；</li>
+<li>如果页面已经引入了jquery，还可以用jquery插件的形式调用 $(‘id 名’).highcharts( {  配置} )；</li>
+</ol>
+</li>
+<li>设置容器的min- width可以让highcharts自适应宽度</li>
+</ol>
+</li>
+</ol>
+</div><div class="tags"><a class="tag-link" href="/tags/vue/" rel="tag">vue</a></div></section></div><div class="container"><ul class="nav"><li>上一篇：<a href="/2020/05/05/certify/">专业证书考证时间顺序</a></li><li>下一篇：<a href="/2018/03/21/%E5%BC%80%E6%BA%90vue%E9%A1%B9%E7%9B%AE%E5%90%88%E9%9B%86/">开源vue项目合集</a></li></ul></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
+<script src="/script/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/script/index.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61220413-1', 'auto');
+ga('send', 'pageview');</script>
+<script src="/script/post.js"></script>
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>SSR相关那些事情</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">tianhui</a></div><div class="about-me">huizi77xl@sina.com</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/jellyhui"></span><a href="https://github.com/jellyhui" target="_blank" title="https://github.com/jellyhui">https://github.com/jellyhui</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="huizi77xl@sina.com"></span><span>huizi77xl@sina.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="huizi_77"></span><span>huizi_77</span></li></ul></div></div></div></header><div class="container post"><section class="article"><div class="title">SSR相关那些事情</div><div class="date">写于2017年02月05日</div><div class="content"><ul>
+<li><pre><code> SSRF （Server-Side Request Forgrey）：
+</code></pre>
+   服务器端请求伪造，是一种由攻击者构造，从而让服务端发起请求的一种安全漏洞，它将一个发起网络请求的服务当做跳板来攻击其他服务,SSRF的攻击目标一般是内网。当服务端提供了从其他服务器获取数据的功能（例如从指定URL获取网页文本内容、加载指定地址的图片、下载等），但是没有对目标地址做过滤与现实时就会出现SSRF。</li>
+<li><pre><code>SSRF的危害：
+</code></pre>
+   很多网站提供了从其他服务器上获取数据的能力，该功能被恶意使用，可以利用存在缺陷的web应用作为代理攻击远程和本地的服务器。</li>
+</ul>
+<ol>
+<li>可以扫描内部网络</li>
+<li>可以构造数据攻击内部主机</li>
+</ol>
+<ul>
+<li><pre><code>漏洞挖掘
+</code></pre>
+</li>
+</ul>
+<p>其实只要能对外发起网络请求就有可能存在SSRF漏洞。</p>
+<ol>
+<li>从WEB功能上寻找<br> 通过URL分享内容<br> 文件处理、编码处理、转码等服务<br> 在线翻译<br> 通过URL地址加载与下载图片<br> 图片、文章的收藏<br> 设置邮件接收服务器</li>
+<li>从URL关键字寻找<br> share、wap、url、link、src、source、target、u、3g、<br> display、sourceURl、imageURL、domain…</li>
+</ol>
+<ul>
+<li>漏洞验证<br><a target="_blank" rel="noopener" href="http://www.douban.com/***/service?image=http://www.baidu.com/img/bd_logo1.png">http://www.douban.com/***/service?image=http://www.baidu.com/img/bd_logo1.png</a></li>
+</ul>
+<ol>
+<li>右键在新窗口打开图片，若浏览器上URL地址为<a target="_blank" rel="noopener" href="http://www.baidu.com/img/bd_logo1.png%EF%BC%8C">http://www.baidu.com/img/bd_logo1.png，</a><br> 说明不存在SSRF漏洞。  </li>
+<li>firebug看网络连接信息，若没有<a target="_blank" rel="noopener" href="http://www.baidu.com/img/bd_logo1.png">http://www.baidu.com/img/bd_logo1.png</a><br> 这个图片请求，则证明图片是豆瓣服务端发起的请求，则可能存在SSRF漏洞。</li>
+</ol>
+<ul>
+<li>绕过过滤<br>有时漏洞利用时会遇到IP限制，可用如下方法绕过：</li>
+<li>使用@：<a target="_blank" rel="noopener" href="http://A.com@10.10.10.10/">http://A.com@10.10.10.10</a> &#x3D; 10.10.10.10</li>
+<li>IP地址转换成十进制、八进制：127.0.0.1 &#x3D; 2130706433</li>
+<li>使用短地址：<a target="_blank" rel="noopener" href="http://10.10.116.11/">http://10.10.116.11</a> &#x3D; <a target="_blank" rel="noopener" href="http://t.cn/RwbLKDx">http://t.cn/RwbLKDx</a></li>
+<li>端口绕过：ip后面加一个端口</li>
+<li>xip.io：10.0.0.1.xip.io &#x3D; 10.0.0.1<br>  <a target="_blank" rel="noopener" href="http://www.10.0.0.1.xip.io/">www.10.0.0.1.xip.io</a> &#x3D; 10.0.0.1<br>  mysite.10.0.0.1.xip.io &#x3D; 10.0.0.1<br>  foo.bar.10.0.0.1.xip.io &#x3D; 10.0.0.1</li>
+<li>通过js跳转</li>
+<li>通用的SSRF实例</li>
+<li>weblogin配置不当，天生ssrf漏洞</li>
+<li>discuz x2.5&#x2F;x3.0&#x2F;x3.1&#x2F;x3.2 ssrf漏洞</li>
+<li>CVE-2016-1897&#x2F;8 - FFMpeg</li>
+<li>CVE-2016-3718 - ImageMagick</li>
+<li>如何防御<br>通常有以下5个思路：</li>
+</ul>
+<ul>
+<li>过滤返回信息，验证远程服务器对请求的响应是比较容易的方法。如果web应用是去获取某一种类型的文件。那么在把返回结果展示给用户之前先验证返回的信息是否符合标准。</li>
+<li>统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态。</li>
+<li>限制请求的端口为http常用的端口，比如，80,443,8080,8090。</li>
+<li>黑名单内网ip。避免应用被用来获取获取内网数据，攻击内网。</li>
+<li>禁用不需要的协议。仅仅允许http和https请求。可以防止类似于file:&#x2F;&#x2F;&#x2F;,gopher:&#x2F;&#x2F;,ftp:&#x2F;&#x2F; 等引起的问题</li>
+</ul>
+</div><div class="tags"><a class="tag-link" href="/tags/js/" rel="tag">js</a></div></section></div><div class="container"><ul class="nav"><li>上一篇：<a href="/2017/02/06/widget%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">widget学习笔记</a></li><li>下一篇：<a href="/2017/02/05/fis3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">fis3学习笔记</a></li></ul></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
+<script src="/script/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/script/index.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61220413-1', 'auto');
+ga('send', 'pageview');</script>
+<script src="/script/post.js"></script>
+</body></html>
